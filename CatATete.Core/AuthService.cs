@@ -1,6 +1,5 @@
 ﻿// AuthService.cs (in CatATete.Core)
 using System;
-using System.Collections.Generic;
 
 namespace CatATete.Core
 {
@@ -11,29 +10,34 @@ namespace CatATete.Core
             DatabaseContext.InitializeDatabase();
         }
 
-        private static readonly List<User> RegisteredUsers = new List<User>();
-        private static User loggedInUser;
+        private static User? loggedInUser;
 
         public static void RegisterUser(string firstName, string lastName, string username, string password)
         {
+            if (DatabaseContext.GetUserByUsername(username) != null)
+            {
+                Console.WriteLine("User with the same username already exists. Please choose a different username.");
+                return;
+            }
+
             var newUser = new User(firstName, lastName, username, password);
             DatabaseContext.InsertUser(newUser);
         }
 
         public static bool Login(string username, string password)
         {
-            foreach (var user in RegisteredUsers)
+            var user = DatabaseContext.GetUserByUsername(username);
+
+            if (user != null && user.Password == password)
             {
-                if (user.Username == username && user.Password == password)
-                {
-                    loggedInUser = user;
-                    return true;
-                }
+                loggedInUser = user;
+                return true;
             }
+
             return false;
         }
 
-        public static User GetLoggedInUser()
+        public static User? GetLoggedInUser()
         {
             return loggedInUser;
         }
@@ -41,12 +45,6 @@ namespace CatATete.Core
         public static void Logout()
         {
             loggedInUser = null;
-        }
-
-        private static User CreateUser(string firstName, string lastName, string username, string password)
-        {
-            int userCounter = RegisteredUsers.Count + 1;
-            return new User(firstName, lastName, username, password);
         }
     }
 }

@@ -1,9 +1,11 @@
 ﻿// User.cs (in CatATete.Core)
+using System;
+
 namespace CatATete.Core
 {
     public class User
     {
-        public string UserId { get; }
+        public string UserId { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Username { get; set; }

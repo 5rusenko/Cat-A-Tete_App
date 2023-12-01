@@ -7,6 +7,7 @@ namespace CatATete.Core
     public static class DatabaseContext
     {
         private const string ConnectionString = "Data Source=catatete.db";
+        private static SqliteConnection? connection = null;
 
         static DatabaseContext()
         {
@@ -16,7 +17,7 @@ namespace CatATete.Core
         public static void InitializeDatabase()
         {
             Console.WriteLine("Initializing the database...");
-            using var connection = new SqliteConnection(ConnectionString);
+            connection = new SqliteConnection(ConnectionString);
             connection.Open();
 
             var createTableCommand = connection.CreateCommand();
@@ -45,6 +46,43 @@ namespace CatATete.Core
             insertCommand.Parameters.AddWithValue("@Password", user.Password);
 
             insertCommand.ExecuteNonQuery();
+        }
+
+
+        public static User GetUserByUsername(string username)
+        {
+            if (connection is null)
+            {
+                // Handle the case when the connection is null
+                Console.WriteLine("Connection is not initialized.");
+                // Return a default user or throw an exception, based on your requirements
+                return new User("", "", "", "");
+            }
+
+            using var selectConnection = new SqliteConnection(ConnectionString);
+            selectConnection.Open();
+
+            var selectCommand = selectConnection.CreateCommand();
+            selectCommand.CommandText = "SELECT * FROM Users WHERE Username = @Username";
+            selectCommand.Parameters.AddWithValue("@Username", username);
+
+            using var reader = selectCommand.ExecuteReader();
+
+            if (reader.Read())
+            {
+                return new User(
+                    reader.GetString(1), // FirstName
+                    reader.GetString(2), // LastName
+                    reader.GetString(3), // Username
+                    reader.GetString(4)  // Password
+                )
+                {
+                    UserId = reader.GetString(0)
+                };
+            }
+
+            // If no user found, return a default User instance or throw an exception
+            return new User("", "", "", ""); // Modify with appropriate default values
         }
     }
 }
