@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete App/CatATeteSolution/CatATete.Core/CatATete.Core.csproj": {}
+    "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/CatATete.Core.csproj": {}
   },
   "projects": {
-    "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete App/CatATeteSolution/CatATete.Core/CatATete.Core.csproj": {
+    "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/CatATete.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete App/CatATeteSolution/CatATete.Core/CatATete.Core.csproj",
+        "projectUniqueName": "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/CatATete.Core.csproj",
         "projectName": "CatATete.Core",
-        "projectPath": "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete App/CatATeteSolution/CatATete.Core/CatATete.Core.csproj",
+        "projectPath": "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/CatATete.Core.csproj",
         "packagesPath": "/Users/martinpetrusenko/.nuget/packages/",
-        "outputPath": "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete App/CatATeteSolution/CatATete.Core/obj/",
+        "outputPath": "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/martinpetrusenko/.nuget/NuGet/NuGet.Config"

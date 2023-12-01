@@ -7,5 +7,5 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = CatATete.Core
-build_property.ProjectDir = /Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/
+build_property.RootNamespace = CatATete.Tests
+build_property.ProjectDir = /Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Tests/
