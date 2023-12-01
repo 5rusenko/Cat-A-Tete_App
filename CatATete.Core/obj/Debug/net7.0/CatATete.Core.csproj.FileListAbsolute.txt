@@ -1,0 +1,11 @@
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/bin/Debug/net7.0/CatATete.Core.deps.json
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/bin/Debug/net7.0/CatATete.Core.dll
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/bin/Debug/net7.0/CatATete.Core.pdb
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/CatATete.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/CatATete.Core.AssemblyInfoInputs.cache
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/CatATete.Core.AssemblyInfo.cs
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/CatATete.Core.csproj.CoreCompileInputs.cache
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/CatATete.Core.dll
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/refint/CatATete.Core.dll
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/CatATete.Core.pdb
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/ref/CatATete.Core.dll
