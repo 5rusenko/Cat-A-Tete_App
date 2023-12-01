@@ -2,4 +2,5 @@
   <MonoDevelop.Ide.ItemProperties.CatATete.Core FirstBuild="True" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.CatATete.ConsoleApp PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.CatATete.Tests FirstBuild="True" />
 </Properties>
