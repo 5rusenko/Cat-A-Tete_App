@@ -6,13 +6,18 @@ namespace CatATete.Core
 {
     public static class AuthService
     {
+        static AuthService()
+        {
+            DatabaseContext.InitializeDatabase();
+        }
+
         private static readonly List<User> RegisteredUsers = new List<User>();
         private static User loggedInUser;
 
         public static void RegisterUser(string firstName, string lastName, string username, string password)
         {
-            var newUser = CreateUser(firstName, lastName, username, password);
-            RegisteredUsers.Add(newUser);
+            var newUser = new User(firstName, lastName, username, password);
+            DatabaseContext.InsertUser(newUser);
         }
 
         public static bool Login(string username, string password)

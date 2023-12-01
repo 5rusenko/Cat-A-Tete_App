@@ -9,3 +9,4 @@
 /Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/refint/CatATete.Core.dll
 /Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/CatATete.Core.pdb
 /Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/ref/CatATete.Core.dll
+/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete_Project/CatATeteSolution/CatATete.Core/obj/Debug/net7.0/CatATete.Core.csproj.AssemblyReference.cache
