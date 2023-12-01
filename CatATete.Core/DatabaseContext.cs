@@ -71,6 +71,7 @@ namespace CatATete.Core
             if (reader.Read())
             {
                 return new User(
+                    reader.GetString(0), // UserId
                     reader.GetString(1), // FirstName
                     reader.GetString(2), // LastName
                     reader.GetString(3), // Username
@@ -81,8 +82,8 @@ namespace CatATete.Core
                 };
             }
 
-            // If no user found, return a default User instance or throw an exception
-            return new User("", "", "", ""); // Modify with appropriate default values
+            // If no user found, return null
+            return null;
         }
     }
 }

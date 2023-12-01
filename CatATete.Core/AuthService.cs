@@ -12,17 +12,23 @@ namespace CatATete.Core
 
         private static User? loggedInUser;
 
+        // AuthService.cs (in CatATete.Core)
         public static void RegisterUser(string firstName, string lastName, string username, string password)
         {
-            if (DatabaseContext.GetUserByUsername(username) != null)
+            // Check if the user already exists in the database
+            var existingUser = DatabaseContext.GetUserByUsername(username);
+
+            if (existingUser != null)
             {
                 Console.WriteLine("User with the same username already exists. Please choose a different username.");
                 return;
             }
 
+            // If the user doesn't exist, proceed with registration
             var newUser = new User(firstName, lastName, username, password);
             DatabaseContext.InsertUser(newUser);
         }
+
 
         public static bool Login(string username, string password)
         {

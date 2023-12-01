@@ -6,11 +6,6 @@ namespace CatATete.ConsoleApp
 {
     class Program
     {
-        static Program()
-        {
-            DatabaseContext.InitializeDatabase();
-        }
-
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Cat-A-Tete App!");
