@@ -1,0 +1,90 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "CatATete.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CatATete.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CatATete.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CatATete.Core/1.0.0": {
+      "type": "project",
+      "path": "../CatATete.Core/CatATete.Core.csproj",
+      "msbuildProject": "../CatATete.Core/CatATete.Core.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "CatATete.Core >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/martinpetrusenko/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete App/CatATeteSolution/CatATete.ConsoleApp/CatATete.ConsoleApp.csproj",
+      "projectName": "CatATete.ConsoleApp",
+      "projectPath": "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete App/CatATeteSolution/CatATete.ConsoleApp/CatATete.ConsoleApp.csproj",
+      "packagesPath": "/Users/martinpetrusenko/.nuget/packages/",
+      "outputPath": "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete App/CatATeteSolution/CatATete.ConsoleApp/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/martinpetrusenko/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete App/CatATeteSolution/CatATete.Core/CatATete.Core.csproj": {
+              "projectPath": "/Users/martinpetrusenko/Documents/Programming Projects/Cat-A-Tete App/CatATeteSolution/CatATete.Core/CatATete.Core.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
