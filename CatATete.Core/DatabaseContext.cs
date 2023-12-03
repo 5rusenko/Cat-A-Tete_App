@@ -84,6 +84,70 @@ namespace CatATete.Core
 
             // If no user found, return null
             return null;
+
+            var createCatsTableCommand = connection.CreateCommand();
+            createCatsTableCommand.CommandText = @"
+                CREATE TABLE IF NOT EXISTS Cats (
+                    CatId TEXT PRIMARY KEY,
+                    Name TEXT,
+                    BirthDate TEXT,
+                    Breed TEXT,
+                    Color TEXT,
+                    UserId TEXT,
+                    FOREIGN KEY(UserId) REFERENCES Users(UserId)
+                )";
+            createCatsTableCommand.ExecuteNonQuery();
         }
+
+        public static void InsertCat(Cat cat, string userId)
+        {
+            using var insertConnection = new SqliteConnection(ConnectionString);
+            insertConnection.Open();
+
+            var insertCommand = insertConnection.CreateCommand();
+            insertCommand.CommandText = "INSERT INTO Cats (CatId, Name, BirthDate, Breed, Color, UserId) VALUES (@CatId, @Name, @BirthDate, @Breed, @Color, @UserId)";
+            insertCommand.Parameters.AddWithValue("@CatId", cat.CatId);
+            insertCommand.Parameters.AddWithValue("@Name", cat.Name);
+            insertCommand.Parameters.AddWithValue("@BirthDate", cat.BirthDate.ToString("yyyy-MM-dd"));
+            insertCommand.Parameters.AddWithValue("@Breed", cat.Breed);
+            insertCommand.Parameters.AddWithValue("@Color", cat.Color);
+            insertCommand.Parameters.AddWithValue("@UserId", userId);
+
+            insertCommand.ExecuteNonQuery();
+        }
+
+        public static Cat GetCatByName(string catName)
+        {
+            if (connection is null)
+            {
+                Console.WriteLine("Connection is not initialized.");
+                return new Cat("", DateTime.Now, "", ""); // Modify with appropriate default values
+            }
+
+            using var selectConnection = new SqliteConnection(ConnectionString);
+            selectConnection.Open();
+
+            var selectCommand = selectConnection.CreateCommand();
+            selectCommand.CommandText = "SELECT * FROM Cats WHERE Name = @Name";
+            selectCommand.Parameters.AddWithValue("@Name", catName);
+
+            using var reader = selectCommand.ExecuteReader();
+
+            if (reader.Read())
+            {
+                return new Cat(
+                    reader.GetString(1), // Name
+                    DateTime.Parse(reader.GetString(2)), // BirthDate
+                    reader.GetString(3), // Breed
+                    reader.GetString(4)  // Color
+                )
+                {
+                    CatId = reader.GetString(0)
+                };
+            }
+
+            return new Cat("", DateTime.Now, "", ""); // Modify with appropriate default values
+        
+}
     }
 }

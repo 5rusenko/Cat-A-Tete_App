@@ -91,28 +91,73 @@ namespace CatATete.ConsoleApp
 
         private static void DisplayMainMenu()
         {
-            // Add the main menu options here
-            Console.WriteLine("Main Menu (Add your options here)");
-            Console.WriteLine("1. Option 1");
-            Console.WriteLine("2. Option 2");
-            Console.WriteLine("3. Logout");
-
-            int choice = GetIntInput("Enter your choice: ");
-
-            switch (choice)
+            while (true)
             {
-                case 1:
-                    // Implement the functionality for Option 1
-                    break;
-                case 2:
-                    // Implement the functionality for Option 2
-                    break;
-                case 3:
-                    Logout();
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice. Please try again.");
-                    break;
+                Console.WriteLine("Main Menu:");
+                Console.WriteLine("1. Add a Cat");
+                Console.WriteLine("2. View all cats");
+                Console.WriteLine("3. Logout");
+
+                int choice = GetIntInput("Enter your choice: ");
+
+                switch (choice)
+                {
+                    case 1:
+                        AddCat();
+                        break;
+                    case 2:
+                        ViewAllCats();
+                        break;
+                    case 3:
+                        Logout();
+                        return; // Exit the loop after logging out
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
+            }
+        }
+
+        private static void AddCat()
+        {
+            Console.WriteLine("Enter cat details:");
+
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Birth Date (yyyy-MM-dd): ");
+            if (DateTime.TryParse(Console.ReadLine(), out DateTime birthDate))
+            {
+                Console.Write("Breed: ");
+                string breed = Console.ReadLine();
+
+                Console.Write("Color: ");
+                string color = Console.ReadLine();
+
+                Cat newCat = new Cat(name, birthDate, breed, color);
+
+                // Add the cat to the database
+                DatabaseContext.InsertCat(newCat, AuthService.GetLoggedInUser()?.UserId);
+
+                Console.WriteLine("Cat added successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid date format. Please use yyyy-MM-dd.");
+            }
+        }
+
+        private static void ViewAllCats()
+        {
+            // Retrieve cats associated with the logged-in user
+            var userId = AuthService.GetLoggedInUser()?.UserId;
+            var cats = DatabaseContext.GetCatsByUserId(userId);
+
+            Console.WriteLine("Your Cats:");
+
+            foreach (var cat in cats)
+            {
+                Console.WriteLine($"Name: {cat.Name}, Birth Date: {cat.BirthDate.ToString("yyyy-MM-dd")}, Breed: {cat.Breed}, Color: {cat.Color}");
             }
         }
 
